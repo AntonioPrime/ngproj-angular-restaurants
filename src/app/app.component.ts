@@ -8,6 +8,7 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit{
   ngOnInit(): void {
+    //toggle menu function
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
