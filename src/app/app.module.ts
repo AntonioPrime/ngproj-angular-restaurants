@@ -7,11 +7,13 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants.component";
+import {LoginComponent} from "./login.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
