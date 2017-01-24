@@ -8,11 +8,16 @@ import {OnInit, Component} from "@angular/core";
 })
 export class RestaurantsComponent implements OnInit {
   restaurants: Restaurant[];
+  errorMessage: string;
 
   constructor(private restaurantService: RestaurantsService) {
   }
 
   ngOnInit(): void {
-    this.restaurantService.getRestaurants().subscribe(restaurants => this.restaurants = restaurants);
+    this.getRestaurants();
+  }
+
+  getRestaurants() {
+    this.restaurantService.getRestaurants().subscribe(restaurants => this.restaurants = restaurants, error => this.errorMessage = error);
   }
 }
