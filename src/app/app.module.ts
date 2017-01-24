@@ -8,12 +8,14 @@ import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants.component";
 import {NavbarComponent} from "./navbar.component";
+import {LoginComponent} from "./login.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
