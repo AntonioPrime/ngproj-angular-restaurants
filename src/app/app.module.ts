@@ -22,8 +22,7 @@ import {RestaurantsComponent} from "./restaurants.component";
     RestaurantsService
   ],
   bootstrap: [
-    AppComponent,
-    RestaurantsComponent
+    AppComponent
   ]
 })
 export class AppModule {
