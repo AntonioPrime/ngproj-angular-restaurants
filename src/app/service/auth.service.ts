@@ -25,6 +25,10 @@ export class AuthService {
     this.loggedUser = this.http.get(this.profileUrl, this.getOptions(username, password)).map(res => res.json())
   }
 
+  logout(){
+    this.loggedUser = null;
+  }
+
   getOptions(username: string, password: string): RequestOptions {
     let headers = new Headers();
     headers.append("Authorization", "Basic " + btoa(username + ":" + password));

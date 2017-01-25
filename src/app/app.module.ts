@@ -10,18 +10,20 @@ import {RestaurantsComponent} from "./restaurants.component";
 import {AuthService} from "./service/auth.service";
 import {ProfileComponent} from "./profile.component";
 import {AppRoutingModule} from "./app-routing.module";
+import {LoginComponent} from "./login.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     RestaurantsService,
