@@ -7,11 +7,14 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants.component";
+import {AuthService} from "./service/auth.service";
+import {ProfileComponent} from "./profile.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import {RestaurantsComponent} from "./restaurants.component";
     HttpModule
   ],
   providers: [
-    RestaurantsService
+    RestaurantsService,
+    AuthService
   ],
   bootstrap: [
     AppComponent
