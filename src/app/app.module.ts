@@ -9,6 +9,7 @@ import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants.component";
 import {AuthService} from "./service/auth.service";
 import {ProfileComponent} from "./profile.component";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ProfileComponent} from "./profile.component";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     RestaurantsService,
