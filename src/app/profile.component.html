@@ -1,4 +1,7 @@
-<div>Logged User: {{loggedUser.name}}</div>
-<div>User's email: {{loggedUser.email}}</div>
-<div>User's roles: {{loggedUser.roles}}</div>
-<div>{{errorMessage}}</div>
+<div *ngIf="loggedUser">
+  <div>Logged User: {{loggedUser.name}}</div>
+  <div>User's email: {{loggedUser.email}}</div>
+  <div>User's roles: {{loggedUser.roles}}</div>
+  <div>{{errorMessage}}</div>
+</div>
+<button (click)="login()">Auth</button>

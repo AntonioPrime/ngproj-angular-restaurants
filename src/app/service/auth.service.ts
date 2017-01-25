@@ -6,8 +6,9 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class AuthService {
-  private loggedUser: User;
+  private loggedUser: Observable<User>;
   private profileUrl = Url.getUrl('/profile');
+  private errorMessage: string;
 
   constructor(private http: Http) {
   }
@@ -17,14 +18,14 @@ export class AuthService {
   }
 
   getProfile(): Observable<User>{
-    return this.http.get(this.profileUrl, this.getOptions("admin@gmail.com", "admin")).map(res => res.json());
+    return this.loggedUser;
   }
 
-  login(){
-
+  login(username: string, password: string){
+    this.loggedUser = this.http.get(this.profileUrl, this.getOptions(username, password)).map(res => res.json())
   }
 
-  private getOptions(username: string, password: string): RequestOptions {
+  getOptions(username: string, password: string): RequestOptions {
     let headers = new Headers();
     headers.append("Authorization", "Basic " + btoa(username + ":" + password));
     return new RequestOptions({headers: headers});

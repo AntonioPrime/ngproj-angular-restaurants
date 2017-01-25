@@ -6,15 +6,15 @@ import {User} from "./model/user";
   selector:'user-profile',
   templateUrl: 'app/profile.component.html'
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent {
   loggedUser: User;
   errorMessage: string;
 
   constructor(private authService: AuthService) {
-    this.loggedUser = new User();
   }
 
-  ngOnInit(): void {
+  public login() {
+    this.authService.login('admin@gmail.com', 'admin');
     this.authService.getProfile().subscribe(user => this.loggedUser = user, error => this.errorMessage = error);
   }
 }
