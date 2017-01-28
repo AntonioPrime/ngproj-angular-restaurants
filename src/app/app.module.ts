@@ -10,12 +10,14 @@ import {RestaurantsComponent} from "./restaurants.component";
 import {AuthService} from "./service/auth.service";
 import {AppRoutingModule} from "./app-routing.module";
 import {AccountComponent} from "./account.component";
+import {NavBarComponent} from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    AccountComponent
+    AccountComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
