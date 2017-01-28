@@ -17,16 +17,17 @@ export class AuthService {
 
   }
 
-  getProfile(): Observable<User>{
+  public getProfile(): Observable<User>{
     return this.loggedUser;
   }
 
-  login(username: string, password: string){
-    this.loggedUser = this.http.get(this.profileUrl, this.getOptions(username, password)).map(res => res.json())
+  public login(username: string, password: string): Observable<User>{
+    return this.http.get(this.profileUrl, this.getOptions(username, password)).map(res => res.json())
+      .catch(e => {return Observable.throw('Unauthorized');});
   }
 
-  logout(){
-    this.loggedUser = null;
+  public logout(){
+    this.loggedUser = Observable.of(null);
   }
 
   getOptions(username: string, password: string): RequestOptions {

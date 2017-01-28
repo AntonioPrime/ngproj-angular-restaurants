@@ -8,16 +8,14 @@ import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants.component";
 import {AuthService} from "./service/auth.service";
-import {ProfileComponent} from "./profile.component";
 import {AppRoutingModule} from "./app-routing.module";
-import {LoginComponent} from "./login.component";
+import {AccountComponent} from "./account.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    ProfileComponent,
-    LoginComponent
+    AccountComponent
   ],
   imports: [
     BrowserModule,
