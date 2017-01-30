@@ -9,8 +9,7 @@ import {User} from "./model/user";
 })
 export class AccountComponent implements OnInit{
   ngOnInit(): void {
-    let localStorageUser = localStorage['user'];
-    this.loggedUser = localStorageUser ? JSON.parse(localStorageUser) : null;
+     this.authService.getProfile().subscribe(user => this.loggedUser = user);
   }
 
   loggedUser: User;
@@ -30,6 +29,5 @@ export class AccountComponent implements OnInit{
   public logout(){
     this.authService.logout();
     this.loggedUser=null;
-    localStorage.removeItem('user');
   }
 }

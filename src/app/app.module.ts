@@ -11,6 +11,7 @@ import {AuthService} from "./service/auth.service";
 import {AppRoutingModule} from "./app-routing.module";
 import {AccountComponent} from "./account.component";
 import {NavBarComponent} from "./navbar/navbar.component";
+import {UserStorageService} from "./service/user-storage.service";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {NavBarComponent} from "./navbar/navbar.component";
   ],
   providers: [
     RestaurantsService,
+    UserStorageService,
     AuthService
   ],
   bootstrap: [
