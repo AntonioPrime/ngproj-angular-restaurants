@@ -4,6 +4,7 @@ import {Headers, Http, RequestOptions} from "@angular/http";
 import {Url} from "../url";
 import {Observable, BehaviorSubject, Subject} from "rxjs";
 import {UserStorageService} from "./user-storage.service";
+import {Idle} from "@ng-idle/core";
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,7 @@ export class AuthService {
 
   private errorMessage: string;
 
-  constructor(private http: Http, private userStorageService: UserStorageService) {
+  constructor(private http: Http, private userStorageService: UserStorageService, private idle: Idle) {
     let storageUser = this.getStorageUser();
     this.loggedUser.next(storageUser);
   }
@@ -37,7 +38,7 @@ export class AuthService {
       });
     loggedUser.subscribe(user => {
       this.userStorageService.save(user, password, 1);
-      this.loggedUser.next(user);
+      // this.loggedUser.next(user);
     });
     return loggedUser;
   }
