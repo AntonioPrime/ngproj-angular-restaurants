@@ -31,8 +31,9 @@ export class AuthService {
   public login(username: string, password: string): Observable<User> {
     let loggedUser: Observable<User> = this.http.get(this.profileUrl, this.getOptions(username, password)).map(res => res.json())
       .catch(e => {
-        if (e.status === 401)
+        if (e.status === 401) {
           return Observable.throw('Unauthorized');
+        }
       });
     loggedUser.subscribe(user => {
       this.userStorageService.save(user, password, 30);

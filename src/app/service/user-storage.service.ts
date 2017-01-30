@@ -6,7 +6,7 @@ export class UserStorageService {
 
   public save(user: User, pass: string, expiresInMinutes: number) {
     if (expiresInMinutes === null || expiresInMinutes === undefined) {
-      expiresInMinutes = (24 * 60 * 60 * 1000);
+      expiresInMinutes = (30 * 60 * 1000);
     }
     let now = Date.now();
     let userStorage = {
