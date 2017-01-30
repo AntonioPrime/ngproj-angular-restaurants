@@ -12,7 +12,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AccountComponent} from "./account.component";
 import {NavBarComponent} from "./navbar/navbar.component";
 import {UserStorageService} from "./service/user-storage.service";
-import {NgIdleModule, Idle, IdleExpiry} from "@ng-idle/core";
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import {NgIdleModule, Idle, IdleExpiry} from "@ng-idle/core";
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NgIdleModule.forRoot()
   ],
   providers: [
     RestaurantsService,
