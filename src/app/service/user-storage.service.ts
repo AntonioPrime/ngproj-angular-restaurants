@@ -13,15 +13,22 @@ export class UserStorageService {
   };
 
   public getUser(): User {
-    let userStorage = sessionStorage.getItem('us');
-    if (userStorage === null || userStorage === undefined) {
-      return null;
-    }
-    let userStorageObj = JSON.parse(userStorage);
-    return userStorageObj.user;
+    return this.getCredentials().user;
+  }
+
+  public getPassword(): string {
+    return this.getCredentials().pass;
   }
 
   public clear() {
     sessionStorage.removeItem('us');
+  }
+
+  private getCredentials(): any {
+    let userStorage = sessionStorage.getItem('us');
+    if (userStorage === null || userStorage === undefined) {
+      return null;
+    }
+    return JSON.parse(userStorage);
   }
 }
