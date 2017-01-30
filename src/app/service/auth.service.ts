@@ -36,7 +36,7 @@ export class AuthService {
         }
       });
     loggedUser.subscribe(user => {
-      this.userStorageService.save(user, password, 30);
+      this.userStorageService.save(user, password, 1);
       this.loggedUser.next(user);
     });
     return loggedUser;

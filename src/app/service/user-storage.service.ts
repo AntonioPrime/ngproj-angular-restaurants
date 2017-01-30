@@ -25,13 +25,10 @@ export class UserStorageService {
     let now = Date.now();
     let userStorageObj = JSON.parse(userStorage);
     let expiresIn = userStorageObj.expiresIn;
-    if (expiresIn < now) {
-      return null;
-    }
-    return userStorageObj.user;
+    return expiresIn < now ? null : userStorageObj.user;
   }
 
-  public clear(){
+  public clear() {
     sessionStorage.removeItem('us');
   }
 }
