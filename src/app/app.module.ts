@@ -9,7 +9,7 @@ import {RestaurantsService} from "./service/restaurants.service";
 import {RestaurantsComponent} from "./restaurants/restaurants.component";
 import {AuthService} from "./service/auth.service";
 import {AppRoutingModule} from "./app-routing.module";
-import {ProfileComponent} from "./navbar/profile/profile.component";
+import {ProfileComponent} from "./profile/profile.component";
 import {NavBarComponent} from "./navbar/navbar.component";
 import {CredentialsStorageService} from "./service/credentials-storage.service";
 

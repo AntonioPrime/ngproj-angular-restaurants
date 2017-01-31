@@ -1,11 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../service/auth.service";
-import {User} from "../../model/user";
+import {AuthService} from "../service/auth.service";
+import {User} from "../model/user";
 
 
 @Component({
   selector: 'login',
-  templateUrl: 'app/navbar/profile/profile.component.html'
+  templateUrl: 'app/profile/profile.component.html'
 })
 export class ProfileComponent implements OnInit{
   ngOnInit(): void {
