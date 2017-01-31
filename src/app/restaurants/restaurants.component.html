@@ -1,6 +1,9 @@
-<div *ngFor="let restaurant of restaurants">
-  {{restaurant.name}}
-  {{restaurant.openTime}}
-  {{restaurant.closeTime}}
+<div class="container">
+  <h1>Restaurants</h1>
+  <div *ngFor="let restaurant of restaurants">
+    {{restaurant.name}}
+    {{restaurant.openTime}}
+    {{restaurant.closeTime}}
+  </div>
+  <p *ngIf="errorMessage">{{errorMessage}}</p>
 </div>
-<p *ngIf="errorMessage">{{errorMessage}}</p>

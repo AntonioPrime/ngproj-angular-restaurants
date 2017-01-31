@@ -8,6 +8,8 @@ import {Router} from "@angular/router";
 })
 export class LoginFormComponent {
 
+  private credentials = {};
+
   constructor(private authService: AuthService, private router: Router) {
   }
 

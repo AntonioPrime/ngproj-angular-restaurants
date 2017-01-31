@@ -1,7 +1,8 @@
-<h1>Profile</h1>
-<div *ngIf="loggedUser">
-  <div>Logged User: {{loggedUser.name}}</div>
-  <div>User's email: {{loggedUser.email}}</div>
-  <div>User's roles: {{loggedUser.roles}}</div>
+<div class="container"><h1>Profile</h1>
+  <div *ngIf="loggedUser">
+    <div>Logged User: {{loggedUser.name}}</div>
+    <div>User's email: {{loggedUser.email}}</div>
+    <div>User's roles: {{loggedUser.roles}}</div>
+  </div>
+  <div>{{errorMessage}}</div>
 </div>
-<div>{{errorMessage}}</div>
