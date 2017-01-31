@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {RestaurantsComponent} from "./restaurants.component";
-import {AccountComponent} from "./account.component";
+import {RestaurantsComponent} from "./restaurants/restaurants.component";
+import {ProfileComponent} from "./navbar/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: RestaurantsComponent
   },
   {
-    path: 'app/login',
-    component: AccountComponent
+    path: 'app/profile',
+    component: ProfileComponent
   },
   {
     path: '',

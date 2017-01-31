@@ -1,13 +1,13 @@
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "./service/auth.service";
-import {User} from "./model/user";
+import {AuthService} from "../../service/auth.service";
+import {User} from "../../model/user";
 
 
 @Component({
   selector: 'login',
-  templateUrl: 'app/account.component.html'
+  templateUrl: 'app/navbar/profile/profile.component.html'
 })
-export class AccountComponent implements OnInit{
+export class ProfileComponent implements OnInit{
   ngOnInit(): void {
      this.authService.getProfile().subscribe(user => this.loggedUser = user);
   }

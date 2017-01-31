@@ -3,7 +3,7 @@ import {User} from "../model/user";
 import {Headers, Http, RequestOptions} from "@angular/http";
 import {Url} from "../url";
 import {Observable, BehaviorSubject, Subject} from "rxjs";
-import {UserStorageService} from "./user-storage.service";
+import {CredentialsStorageService} from "./credentials-storage.service";
 
 @Injectable()
 export class AuthService {
@@ -12,7 +12,7 @@ export class AuthService {
 
   private errorMessage: string;
 
-  constructor(private http: Http, private userStorageService: UserStorageService) {
+  constructor(private http: Http, private userStorageService: CredentialsStorageService) {
     let storageUser = this.getStorageUser();
     this.loggedUser.next(storageUser);
   }

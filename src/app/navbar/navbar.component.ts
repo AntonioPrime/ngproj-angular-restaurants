@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../service/auth.service";
 import {User} from "../model/user";
-import {Observable, Subject} from "rxjs";
 
 @Component({
   selector: 'main-navbar',
@@ -9,8 +8,6 @@ import {Observable, Subject} from "rxjs";
 })
 export class NavBarComponent implements OnInit{
   loggedUser: User;
-  errorMessage: string;
-  private f: Subject<User>;
 
   constructor(private authService: AuthService) {
   }

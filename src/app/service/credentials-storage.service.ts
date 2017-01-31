@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {User} from "../model/user";
 
 @Injectable()
-export class UserStorageService {
+export class CredentialsStorageService {
 
   public save(user: User, pass: string) {
     let userStorage = {

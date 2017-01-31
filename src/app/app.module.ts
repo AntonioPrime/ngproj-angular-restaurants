@@ -6,18 +6,18 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
-import {RestaurantsComponent} from "./restaurants.component";
+import {RestaurantsComponent} from "./restaurants/restaurants.component";
 import {AuthService} from "./service/auth.service";
 import {AppRoutingModule} from "./app-routing.module";
-import {AccountComponent} from "./account.component";
+import {ProfileComponent} from "./navbar/profile/profile.component";
 import {NavBarComponent} from "./navbar/navbar.component";
-import {UserStorageService} from "./service/user-storage.service";
+import {CredentialsStorageService} from "./service/credentials-storage.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    AccountComponent,
+    ProfileComponent,
     NavBarComponent
   ],
   imports: [
@@ -28,7 +28,7 @@ import {UserStorageService} from "./service/user-storage.service";
   ],
   providers: [
     RestaurantsService,
-    UserStorageService,
+    CredentialsStorageService,
     AuthService
   ],
   bootstrap: [
