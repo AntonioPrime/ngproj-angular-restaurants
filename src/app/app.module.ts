@@ -13,6 +13,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {NavBarComponent} from "./navbar/navbar.component";
 import {CredentialsStorageService} from "./service/credentials-storage.service";
 import {LoginFormComponent} from "./login/login-form.component";
+import {AuthGuard} from "./service/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {LoginFormComponent} from "./login/login-form.component";
   providers: [
     RestaurantsService,
     CredentialsStorageService,
-    AuthService
+    AuthService,
+    AuthGuard,
   ],
   bootstrap: [
     AppComponent

@@ -15,6 +15,5 @@ export class LoginFormComponent {
 
   public login() {
     this.authService.login(this.credentials.email, this.credentials.password);
-    this.router.navigate(['/app/profile']);
   }
 }
