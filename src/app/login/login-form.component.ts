@@ -8,13 +8,13 @@ import {Router} from "@angular/router";
 })
 export class LoginFormComponent {
 
-  private credentials = {};
+  public credentials = {email: '', password: ''};
 
   constructor(private authService: AuthService, private router: Router) {
   }
 
   public login() {
-    this.authService.login('admin@gmail.com', 'admin');
+    this.authService.login(this.credentials.email, this.credentials.password);
     this.router.navigate(['/app/profile']);
   }
 }
