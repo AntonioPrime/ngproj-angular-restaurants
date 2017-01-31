@@ -12,13 +12,15 @@ import {AppRoutingModule} from "./app-routing.module";
 import {ProfileComponent} from "./profile/profile.component";
 import {NavBarComponent} from "./navbar/navbar.component";
 import {CredentialsStorageService} from "./service/credentials-storage.service";
+import {LoginFormComponent} from "./login/login-form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
     ProfileComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
