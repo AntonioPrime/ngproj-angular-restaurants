@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class AuthService {
   private profileUrl = Url.getUrl('/profile');
   redirectUrl: string;
-  authError: Subject<string> = new BehaviorSubject<string>(null);
+  is401: Subject<boolean> = new BehaviorSubject<boolean>(false);
   private loggedUser: Subject<User> = new BehaviorSubject<User>(null);
 
   constructor(private http: Http, private userStorageService: CredentialsStorageService, private router: Router) {
@@ -38,11 +38,11 @@ export class AuthService {
       }).subscribe(user => {
       this.userStorageService.save(user, password);
       this.loggedUser.next(user);
-      this.authError.next(null);
+      this.is401.next(false);
       let redirect = this.redirectUrl ? this.redirectUrl : '/app/profile';
       this.router.navigate([redirect]);
     }, (err) => {
-      this.authError.next(err);
+      this.is401.next(true);
       }
     );
   }

@@ -6,7 +6,7 @@ import {AuthService} from "../service/auth.service";
   templateUrl: 'app/login/login-form.component.html'
 })
 export class LoginFormComponent implements OnInit{
-  errorMessage: string;
+  isError: boolean;
 
   public credentials = {email: '', password: ''};
 
@@ -14,7 +14,7 @@ export class LoginFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.authService.authError.subscribe(error => this.errorMessage = error);
+    this.authService.is401.subscribe(isError => this.isError = isError);
   }
 
   public login() {
