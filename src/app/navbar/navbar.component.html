@@ -9,7 +9,10 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li *ngIf="loggedUser"><a routerLink="/app/profile" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-      <li><a routerLink="/app/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li [ngSwitch]="loggedUser">
+        <template [ngSwitchCase]="null"><a routerLink="/app/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login</a></template>
+        <template ngSwitchDefault><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></template>
+      </li>
     </ul>
   </div>
 </nav>

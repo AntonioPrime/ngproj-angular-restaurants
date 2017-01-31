@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {AuthService} from "../service/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'login-form',
@@ -7,14 +8,11 @@ import {AuthService} from "../service/auth.service";
 })
 export class LoginFormComponent {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   public login() {
     this.authService.login('admin@gmail.com', 'admin');
-  }
-
-  public logout(){
-    this.authService.logout();
+    this.router.navigate(['/app/profile']);
   }
 }
