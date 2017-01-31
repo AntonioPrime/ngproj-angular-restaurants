@@ -26,9 +26,6 @@ export class UserStorageService {
 
   private getCredentials(): any {
     let userStorage = sessionStorage.getItem('us');
-    if (userStorage === null || userStorage === undefined) {
-      return null;
-    }
-    return JSON.parse(userStorage);
+    return userStorage === null ? {} : JSON.parse(userStorage);
   }
 }
