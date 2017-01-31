@@ -1,16 +1,20 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../service/auth.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'login-form',
   templateUrl: 'app/login/login-form.component.html'
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit{
+  errorMessage: string;
 
   public credentials = {email: '', password: ''};
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService) {
+  }
+
+  ngOnInit(): void {
+    this.authService.authError.subscribe(error => this.errorMessage = error);
   }
 
   public login() {
