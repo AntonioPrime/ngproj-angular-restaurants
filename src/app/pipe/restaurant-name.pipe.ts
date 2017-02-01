@@ -5,9 +5,9 @@ import {PipeTransform, Pipe} from "@angular/core";
 })
 export class RestaurantNamePipe implements PipeTransform {
   transform(restauranName: string): string {
-    let s = restauranName.replace('_', ' ');
-    return s.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    let str = restauranName.replace('_', ' ');
+    return str.replace(/\w\S*/g, function (word) {
+      return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
     });
   }
 }
