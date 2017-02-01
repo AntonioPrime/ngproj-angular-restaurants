@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Restaurants</h1>
-  <div *ngFor="let restaurant of restaurants">
-    {{restaurant.name}}
-    {{restaurant.openTime}}
-    {{restaurant.closeTime}}
+  <div class="list-group" *ngFor="let restaurant of restaurants">
+    <a class="list-group-item list-group-item-action" style="font-size: large; font-weight: bolder">
+      {{restaurant.name}}<span class="glyphicon glyphicon-bookmark pull-right green" ></span>
+    </a>
   </div>
   <p *ngIf="errorMessage">{{errorMessage}}</p>
 </div>
