@@ -4,7 +4,7 @@ import {OnInit, Component} from "@angular/core";
 
 @Component({
   selector: 'my-restaurants',
-  templateUrl:'app/restaurants/restaurants.component.html'
+  templateUrl: 'app/restaurants/restaurants.component.html'
 })
 export class RestaurantsComponent implements OnInit {
   restaurants: Restaurant[];
@@ -19,5 +19,20 @@ export class RestaurantsComponent implements OnInit {
 
   getRestaurants() {
     this.restaurantService.getRestaurants().subscribe(restaurants => this.restaurants = restaurants, error => this.errorMessage = error);
+  }
+
+  isClosed(restaurant: Restaurant): any {
+    let now = Date.now();
+    let nowDate = new Date().toISOString().substr(0, 11);
+    let afterOpening = Date.parse(nowDate + restaurant.openTime) <= now;
+    let beforeClosing = Date.parse(nowDate + restaurant.closeTime) > now;
+    let inTime = afterOpening && beforeClosing;
+    return {
+      'glyphicon': true,
+      'glyphicon-bookmark': true,
+      'pull-right': true,
+      'green': inTime,
+      'red': !inTime
+    };
   }
 }

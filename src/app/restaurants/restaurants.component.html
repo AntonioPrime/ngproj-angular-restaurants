@@ -5,7 +5,7 @@
   </div>
   <div class="list-group" *ngFor="let restaurant of restaurants">
     <a class="list-group-item list-group-item-action" style="font-size: large">
-      {{restaurant.name | nameTransform}}<span class="glyphicon glyphicon-bookmark pull-right green"></span>
+      {{restaurant.name | nameTransform}}<span [ngClass]="isClosed(restaurant)"></span>
     </a>
   </div>
   <p *ngIf="errorMessage">{{errorMessage}}</p>
