@@ -15,11 +15,13 @@ import {CredentialsStorageService} from "./service/credentials-storage.service";
 import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
 import {RestaurantNamePipe} from "./pipe/restaurant-name.pipe";
+import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
+    RestaurantDetailComponent,
     ProfileComponent,
     NavBarComponent,
     LoginFormComponent,
