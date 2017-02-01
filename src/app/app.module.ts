@@ -14,6 +14,7 @@ import {NavBarComponent} from "./navbar/navbar.component";
 import {CredentialsStorageService} from "./service/credentials-storage.service";
 import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
+import {RestaurantNamePipe} from "./pipe/restaurant-name.pipe";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AuthGuard} from "./service/auth-guard.service";
     RestaurantsComponent,
     ProfileComponent,
     NavBarComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RestaurantNamePipe
   ],
   imports: [
     BrowserModule,

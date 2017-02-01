@@ -1,8 +1,11 @@
 <div class="container">
-  <h1>Restaurants</h1>
+  <div class="page-header">
+
+  <h1 style="text-align: center">Restaurants</h1>
+  </div>
   <div class="list-group" *ngFor="let restaurant of restaurants">
-    <a class="list-group-item list-group-item-action" style="font-size: large; font-weight: bolder">
-      {{restaurant.name}}<span class="glyphicon glyphicon-bookmark pull-right green" ></span>
+    <a class="list-group-item list-group-item-action" style="font-size: large">
+      {{restaurant.name | nameTransform}}<span class="glyphicon glyphicon-bookmark pull-right green"></span>
     </a>
   </div>
   <p *ngIf="errorMessage">{{errorMessage}}</p>
