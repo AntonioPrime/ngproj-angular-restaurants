@@ -32,6 +32,10 @@ export class AuthService {
     return this.userStorageService.getUser();
   }
 
+  private getStoragePass(): string {
+    return this.userStorageService.getPassword();
+  }
+
   public getProfile(): Subject<User> {
     return this.loggedUser;
   }
@@ -55,8 +59,14 @@ export class AuthService {
   }
 
   public logout() {
+    this.router.navigate(['/app/restaurants']);
     this.loggedUser.next(null);
     this.userStorageService.clear();
+  }
+
+  public deleteProfile(username: string) {
+    this.http.delete(`${this.profileUrl}`, this.getOptions(username, this.getStoragePass())).subscribe((res) => {});
+    this.logout();
   }
 
   private getOptions(username: string, password: string): RequestOptions {
