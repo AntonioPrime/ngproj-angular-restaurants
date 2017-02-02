@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 jumbotron" style="background-color: rgba(60,50,155,0.1)">
+      <div class="row">
+        <div class="page-header col-md-6">
+          <p style="text-align: center; font-size: 300%">Profile </p>
+        </div>
+        <div class="page-header col-md-6">
+          <button class="btn btn-danger pull-right" (click)="deleteSelf()" style="color: lavender">Delete</button>
+        </div>
+      </div>
+      <div *ngIf="loggedUser">
+        <p class="text text-primary">Status: {{loggedUser.roles.indexOf('ROLE_ADMIN')!=-1?'Admin':'User'}}</p>
+        <p class="text">Login: {{loggedUser.name}}</p>
+        <p class="text">Email: {{loggedUser.email}}</p>
+      </div>
+      <div>{{errorMessage}}</div>
+    </div>
+  </div>
+</div>

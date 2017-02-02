@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+.green {
+  color: #029b11;
+}
+.red {
+  color: #e10604;
+}
+.glyphicon.glyphicon-bookmark{
+  font-size: 25px;
+  vertical-align: middle;
+}
