@@ -5,9 +5,9 @@
         <p style="text-align: center; font-size: 300%">Profile </p>
       </div>
       <div *ngIf="loggedUser">
-        <div>Logged User: {{loggedUser.name}}</div>
-        <div>User's email: {{loggedUser.email}}</div>
-        <div>User's roles: {{loggedUser.roles}}</div>
+        <p class="text text-primary">Status: {{loggedUser.roles.indexOf('ROLE_ADMIN')!=-1?'Admin':'User'}}</p>
+        <p class="text">Login: {{loggedUser.name}}</p>
+        <p class="text">Email: {{loggedUser.email}}</p>
       </div>
       <div>{{errorMessage}}</div>
     </div>
