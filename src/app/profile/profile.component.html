@@ -1,8 +1,15 @@
-<div class="container"><h1>Profile</h1>
-  <div *ngIf="loggedUser">
-    <div>Logged User: {{loggedUser.name}}</div>
-    <div>User's email: {{loggedUser.email}}</div>
-    <div>User's roles: {{loggedUser.roles}}</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 jumbotron" style="background-color: rgba(60,50,155,0.1)">
+      <div class="page-header">
+        <p style="text-align: center; font-size: 300%">Profile </p>
+      </div>
+      <div *ngIf="loggedUser">
+        <div>Logged User: {{loggedUser.name}}</div>
+        <div>User's email: {{loggedUser.email}}</div>
+        <div>User's roles: {{loggedUser.roles}}</div>
+      </div>
+      <div>{{errorMessage}}</div>
+    </div>
   </div>
-  <div>{{errorMessage}}</div>
 </div>

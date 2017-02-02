@@ -8,9 +8,14 @@ import {Url} from "../url";
 export class RestaurantsService {
   private restaurantsUrl = Url.getUrl('/restaurants');
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+  }
 
-  getRestaurants(): Observable<Restaurant[]> {
+  getAll(): Observable<Restaurant[]> {
     return this.http.get(this.restaurantsUrl).map(res => res.json());
+  }
+
+  get(name: string): Observable<Restaurant> {
+    return this.http.get(this.restaurantsUrl + '/' + name).map(res => res.json());
   }
 }

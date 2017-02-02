@@ -1,0 +1,29 @@
+<div *ngIf="restaurant" class="col-sm-12 col-md-7 jumbotron pull-right" style="background-color: rgba(60,50,155,0.1)">
+  <div class="page-header">
+    <p style="text-align: center; font-size: 300%">{{restaurant.name | nameTransform}}</p>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center text">Working hours: {{restaurant.openTime.substr(0, 5)}} - {{restaurant.closeTime.substr(0,
+        5)}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th style="width: 50%">Food</th>
+        <th style="width: 25%">Preparing, min.</th>
+        <th style="width: 25%">Price, $</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let food of restaurant.menu">
+        <td>{{food.description}}</td>
+        <td>{{food.preparingTime}} </td>
+        <td>{{food.price}} </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import {Restaurant} from "../model/restaurant";
 import {RestaurantsService} from "../service/restaurants.service";
 import {OnInit, Component} from "@angular/core";
 import {Subject} from "rxjs";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'my-restaurants',
@@ -12,18 +13,23 @@ export class RestaurantsComponent implements OnInit {
   errorMessage: string;
   restaurants: Subject<Restaurant[]> = new Subject<Restaurant[]>();
 
-  constructor(private restaurantService: RestaurantsService) {
-  }
+  constructor(private restaurantService: RestaurantsService,
+              private router: Router,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getRestaurants();
   }
 
   getRestaurants() {
-    this.restaurantService.getRestaurants().subscribe(restaurants => {
+    this.restaurantService.getAll().subscribe(restaurants => {
       this.restaurantsCached = restaurants;
       this.restaurants.next(restaurants)
     }, error => this.errorMessage = error);
+  }
+
+  toDetail(name: string) {
+    this.router.navigate([name], {relativeTo: this.route});
   }
 
   search(name: string) {

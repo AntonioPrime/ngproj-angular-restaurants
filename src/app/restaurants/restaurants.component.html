@@ -1,14 +1,20 @@
 <div class="container">
-  <div class="page-header">
-  <h1 style="text-align: center">Restaurants</h1>
+  <div class="row">
+    <div class="col-sm-12 col-md-4 jumbotron" style="background-color: rgba(60,50,155,0.1)">
+      <div class="page-header">
+        <p style="text-align: center; font-size: 300%">Restaurants</p>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" #searchBox placeholder="Restaurant's name"
+               (keyup)="search(searchBox.value)">
+      </div>
+      <div class="list-group" *ngFor="let restaurant of restaurants | async">
+        <a class="list-group-item list-group-item-action" style="font-size: large" (click)="toDetail(restaurant.name)">
+          {{restaurant.name | nameTransform}}<span [ngClass]="isClosed(restaurant)"></span>
+        </a>
+      </div>
+      <p *ngIf="errorMessage">{{errorMessage}}</p>
+    </div>
+    <router-outlet></router-outlet>
   </div>
-  <div class="form-group">
-    <input type="text" class="form-control" #searchBox placeholder="Restaurant's name" (keyup)="search(searchBox.value)">
-  </div>
-  <div class="list-group" *ngFor="let restaurant of restaurants | async">
-    <a class="list-group-item list-group-item-action" style="font-size: large">
-      {{restaurant.name | nameTransform}}<span [ngClass]="isClosed(restaurant)"></span>
-    </a>
-  </div>
-  <p *ngIf="errorMessage">{{errorMessage}}</p>
 </div>

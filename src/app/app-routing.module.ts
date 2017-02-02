@@ -4,11 +4,18 @@ import {RestaurantsComponent} from "./restaurants/restaurants.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
+import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
 
 const routes: Routes = [
   {
     path: 'app/restaurants',
-    component: RestaurantsComponent
+    component: RestaurantsComponent,
+    children: [
+      {
+        path: ':name',
+        component: RestaurantDetailComponent
+      }
+    ]
   },
   {
     path: 'app/profile',
