@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../service/auth.service";
-import {ActivatedRoute, Params} from "@angular/router";
-import {register} from "ts-node/dist";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'login-form',
