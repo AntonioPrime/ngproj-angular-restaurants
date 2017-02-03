@@ -4,7 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'login-form',
-  templateUrl: 'app/login/login-form.component.html'
+  templateUrl: 'app/login/login-form.component.html',
+  styleUrls: ['app/login/login-form.component.css']
 })
 export class LoginFormComponent implements OnInit{
   error: string;
