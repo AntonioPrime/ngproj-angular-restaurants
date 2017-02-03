@@ -52,7 +52,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="!isRegister" class="container">
+<div *ngIf="!isRegister && isProduction==false" class="container">
   <div class="list-group">
     <a style="cursor: pointer" class="list-group-item" (click)="defaultLogin('admin@gmail.com', 'admin')">
       - admin@gmail.com / admin

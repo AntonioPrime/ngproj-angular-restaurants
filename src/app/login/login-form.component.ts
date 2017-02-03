@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../service/auth.service";
 import {ActivatedRoute} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'login-form',
@@ -10,6 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class LoginFormComponent implements OnInit{
   error: string;
   isRegister: boolean;
+  isProduction: boolean = environment.production;
 
   public credentials = {name: '', email: '', password: ''};
 
@@ -32,8 +34,10 @@ export class LoginFormComponent implements OnInit{
 
   //FOR DEVELOPING TESTING ONLY
   public defaultLogin(email: string, password: string) {
-    this.credentials.email = email;
-    this.credentials.password = password;
-    this.login();
+    if (this.isProduction==false) {
+      this.credentials.email = email;
+      this.credentials.password = password;
+      this.login();
+    }
   }
 }
