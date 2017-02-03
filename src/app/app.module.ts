@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {AirDatepicker} from 'angular2-air-datepicker';
 
 import {AppComponent} from './app.component';
 import {RestaurantsService} from "./service/restaurants.service";
@@ -31,7 +30,6 @@ import {MenuComponent} from "./menu/menu.component";
     NavBarComponent,
     LoginFormComponent,
     RestaurantNamePipe,
-    AirDatepicker,
     BookingCreatorComponent
   ],
   imports: [
