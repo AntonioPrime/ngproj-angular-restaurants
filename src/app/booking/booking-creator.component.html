@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 pull-right">
+    <air-datepicker [airOptions]="{ timepicker: true, format12h: false, language: 'en', minuteStep: 10 }"
+                    [(airDate)]="date" (airChange)="dateChanged()"></air-datepicker>
+  </div>
+</div>
+<div class="row">
+  <div class="form-group pull-right" style="padding-right: 5%">
+    <input placeholder="Booking time"
+           value="{{date.toLocaleDateString()+ ' ' + date.toLocaleTimeString().replace(':00 ', ' ')}}" name="date"
+           type="datetime-local" class="form-control" style="font-weight: bolder"/>
+  </div>
+  <div>
+    <button class="btn btn-info pull-right" (click)="book()">Book!</button>
+  </div>
+</div>
+<div *ngIf="booking">
+  {{booking | json}}
+</div>

@@ -64,9 +64,13 @@ export class AuthService {
     this.userStorageService.clear();
   }
 
-  public deleteProfile(username: string) {
-    this.http.delete(`${this.profileUrl}`, this.getOptions(username, this.getStoragePass())).subscribe((res) => {});
+  public deleteProfile() {
+    this.http.delete(`${this.profileUrl}`, this.getStorageOptions()).subscribe((res) => {});
     this.logout();
+  }
+
+  public getStorageOptions(): RequestOptions {
+    return this.getOptions(this.getStorageUser().email, this.getStoragePass());
   }
 
   private getOptions(username: string, password: string): RequestOptions {

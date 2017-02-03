@@ -8,22 +8,7 @@
         5)}}</p>
     </div>
   </div>
-  <div class="row">
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th style="width: 50%">Food</th>
-        <th style="width: 25%">Preparing, min.</th>
-        <th style="width: 25%">Price, $</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let food of restaurant.menu">
-        <td>{{food.description}}</td>
-        <td>{{food.preparingTime}} </td>
-        <td>{{food.price}} </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+  <booking-creator *ngIf="loggedUser"></booking-creator>
+  <restaurant-menu [menu]="restaurant.menu"></restaurant-menu>
 </div>
+

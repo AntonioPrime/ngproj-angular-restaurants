@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   deleteSelf(): void {
     let result = confirm("Do you want to delete your profile ?");
     if (result) {
-      this.authService.deleteProfile(this.loggedUser.email);
+      this.authService.deleteProfile();
     }
   }
 }
