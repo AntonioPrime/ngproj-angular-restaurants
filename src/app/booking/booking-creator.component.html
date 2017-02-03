@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 pull-right">
+  </div>
+</div>
+<div class="row">
+  <div class="form-group pull-right" style="padding-right: 5%">
+    <input placeholder="Booking time" class="form-control"/>
+  </div>
+  <div>
+    <button class="btn btn-info pull-right" (click)="book()">Book!</button>
+  </div>
+</div>
+<div *ngIf="booking">
+  {{booking | json}}
+</div>

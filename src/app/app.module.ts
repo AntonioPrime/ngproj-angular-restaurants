@@ -16,28 +16,34 @@ import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
 import {RestaurantNamePipe} from "./pipe/restaurant-name.pipe";
 import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
+import {BookingCreatorComponent} from "./booking/booking-creator.component";
+import {BookingService} from "./service/booking.service";
+import {MenuComponent} from "./menu/menu.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
     RestaurantDetailComponent,
+    MenuComponent,
     ProfileComponent,
     NavBarComponent,
     LoginFormComponent,
-    RestaurantNamePipe
+    RestaurantNamePipe,
+    BookingCreatorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     RestaurantsService,
     CredentialsStorageService,
     AuthService,
-    AuthGuard,
+    BookingService,
+    AuthGuard
   ],
   bootstrap: [
     AppComponent
