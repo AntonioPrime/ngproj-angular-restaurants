@@ -1,10 +1,10 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">NgProject</a>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">NgProject</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a routerLink="/" routerLinkActive="active">Home</a></li>
       <li><a routerLink="/app/restaurants" routerLinkActive="active">Restaurants</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right" [ngSwitch]="loggedUser">
