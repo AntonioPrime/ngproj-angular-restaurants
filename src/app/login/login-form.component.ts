@@ -29,4 +29,11 @@ export class LoginFormComponent implements OnInit{
       this.authService.login(this.credentials.email, this.credentials.password);
     }
   }
+
+  //FOR DEVELOPING TESTING ONLY
+  public defaultLogin(email: string, password: string) {
+    this.credentials.email = email;
+    this.credentials.password = password;
+    this.login();
+  }
 }
