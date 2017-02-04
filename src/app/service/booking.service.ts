@@ -16,8 +16,8 @@ export class BookingService {
     return this.http.post(this.bookingsUrl + '/' + booking.restaurantName, JSON.stringify(booking), this.authService.getStorageOptions())
       .map(res => res.json())
       .catch(ex => {
+        let s: string = ex.json().details[0];
         if (ex.status == 500) {
-          let s: string = ex.json().details[0];
           if (s.match("MonthOfYear")) {
             return Observable.throw('wrong month');
           } else if (s.match("DayOfMonth")) {
@@ -28,7 +28,7 @@ export class BookingService {
             return Observable.throw('wrong minute');
           }
         }
-        return Observable.throw(ex.json().details[0]);
+        return Observable.throw(s);
       });
   }
 }
