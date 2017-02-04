@@ -19,6 +19,8 @@ import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.c
 import {BookingCreatorComponent} from "./booking/booking-creator.component";
 import {BookingService} from "./service/booking.service";
 import {MenuComponent} from "./menu/menu.component";
+import {NglModule} from "ng-lightning/ng-lightning";
+import {InputMask} from "primeng/primeng";
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import {MenuComponent} from "./menu/menu.component";
     NavBarComponent,
     LoginFormComponent,
     RestaurantNamePipe,
-    BookingCreatorComponent
+    BookingCreatorComponent,
+    InputMask
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NglModule.forRoot(),
   ],
   providers: [
     RestaurantsService,
