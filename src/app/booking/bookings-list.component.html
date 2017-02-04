@@ -1,0 +1,12 @@
+<div class="col-sm-12 col-md-7 pull-right jumbotron" style="background-color: rgba(60,50,155,0.1)">
+  <div class="page-header">
+    <p style="text-align: center; font-size: 300%">My Bookings</p>
+  </div>
+  <div>
+    <p-dataScroller [value]="bookings" [rows]="10">
+      <template let-book pTemplate="item">
+        <div>{{book.date}}</div>
+      </template>
+    </p-dataScroller>
+  </div>
+</div>

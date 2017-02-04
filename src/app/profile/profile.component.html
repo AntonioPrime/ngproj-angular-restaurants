@@ -5,8 +5,19 @@
         <div class="page-header col-md-6">
           <p style="text-align: center; font-size: 300%">Profile </p>
         </div>
+        <button class="pull-right ui-button-danger" (click)="showDialog()" pButton icon="fa-times"
+                label="Delete"></button>
         <div class="page-header col-md-6">
-          <button class="btn btn-danger pull-right" (click)="deleteSelf()" style="color: lavender">Delete</button>
+          <p-dialog header="Warning" [(visible)]="display" modal="modal" width="300" responsive="true">
+            <p>Do you really want to delete yourself?</p>
+            <p-footer>
+              <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+                <button type="button" class="ui-button-danger" pButton icon="fa-check" (click)="deleteSelf()"
+                        label="Yes"></button>
+              </div>
+            </p-footer>
+          </p-dialog>
         </div>
       </div>
       <div *ngIf="loggedUser">
@@ -15,6 +26,10 @@
         <p class="text">Email: {{loggedUser.email}}</p>
       </div>
       <div>{{errorMessage}}</div>
+      <div class="row">
+        <a class="btn btn-sm btn-info pull-right" [routerLink]="['bookings']" style="color: lavender">Bookings <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </div>
     </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

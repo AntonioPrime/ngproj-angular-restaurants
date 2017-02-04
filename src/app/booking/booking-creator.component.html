@@ -2,11 +2,20 @@
   <div class="col-md-6 pull-right">
     <div class="pull-left">
       <div class="form-group">
-        <p-inputMask styleClass="form-control" mask="9999-99-99 99:99" [(ngModel)]="dateTime" slotChar="yyyy-mm-dd hh:mm"
-                     (onComplete)="buttonUnblock()"></p-inputMask>
+        <p-calendar [(ngModel)]="dateTime" [minDate]="minDate" [maxDate]="maxDate" inputStyleClass="form-control" (onSelect)="buttonBlocked=true" dateFormat="yy-mm-dd" showTime="showTime" hourFormat="24"></p-calendar>
       </div>
     </div>
-    <button class="btn btn-info pull-right" [disabled]="!buttonBlocked" (click)="book()">Book!</button>
+    <button class="btn btn-info pull-right" [disabled]="!buttonBlocked" (click)="showDialog()">Book!</button>
+    <p-dialog header="Warning" [(visible)]="display" modal="modal" width="300" responsive="true">
+      <p>Booking confirmation.</p>
+      <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+          <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+          <button type="button" class="ui-button-info" pButton icon="fa-check" (click)="book()"
+                  label="Yes"></button>
+        </div>
+      </p-footer>
+    </p-dialog>
   </div>
 </div>
 <div *ngIf="booking" class="alert alert-success pull-right">

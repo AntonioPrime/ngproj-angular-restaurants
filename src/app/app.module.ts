@@ -19,8 +19,8 @@ import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.c
 import {BookingCreatorComponent} from "./booking/booking-creator.component";
 import {BookingService} from "./service/booking.service";
 import {MenuComponent} from "./menu/menu.component";
-import {NglModule} from "ng-lightning/ng-lightning";
-import {InputMask} from "primeng/primeng";
+import {BookingsListComponent} from "./booking/bookings-list.component";
+import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "primeng/primeng";
 
 @NgModule({
   declarations: [
@@ -33,14 +33,17 @@ import {InputMask} from "primeng/primeng";
     LoginFormComponent,
     RestaurantNamePipe,
     BookingCreatorComponent,
-    InputMask
+    BookingsListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NglModule.forRoot(),
+    CalendarModule,
+    DataScrollerModule,
+    DialogModule,
+    SharedModule
   ],
   providers: [
     RestaurantsService,

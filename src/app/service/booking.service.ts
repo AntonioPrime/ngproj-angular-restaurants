@@ -31,4 +31,9 @@ export class BookingService {
         return Observable.throw(s);
       });
   }
+
+  getAll() : Observable<Booking[]> {
+    return this.http.get(this.bookingsUrl, this.authService.getStorageOptions()).map(res => res.json())
+      .catch(ex => ex.json().details[0]);
+  }
 }
