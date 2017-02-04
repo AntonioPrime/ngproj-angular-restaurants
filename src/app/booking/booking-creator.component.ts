@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {BookingService} from "../service/booking.service";
 import {Booking} from "../model/booking";
 
@@ -7,19 +7,32 @@ import {Booking} from "../model/booking";
   selector: 'booking-creator'
 })
 export class BookingCreatorComponent {
-  date: Date = new Date();
   booking: Booking;
-  val: string;
+  dateTime: string;
   buttonBlocked: boolean;
+  error: string;
+  @Input() restaurantName: string;
 
   constructor(private bookingService: BookingService) {
   }
 
   book() {
-    this.bookingService.book(this.date).subscribe(booking => this.booking = booking);
+    let result = confirm("Please confirm to apply your booking.");
+    if (result) {
+      let date = this.dateTime.substr(0, 10);
+      let time = this.dateTime.substr(11, 5);
+      this.bookingService.book(new Booking(date, time, this.restaurantName))
+        .subscribe(booking => {
+          this.error = null;
+          this.booking = booking;
+        }, err => {
+          this.booking = null;
+          this.error = err;
+        });
+    }
   }
 
   buttonUnblock() {
-    this.buttonBlocked=true;
+    this.buttonBlocked = true;
   }
 }

@@ -2,13 +2,16 @@
   <div class="col-md-6 pull-right">
     <div class="pull-left">
       <div class="form-group">
-        <p-inputMask styleClass="form-control" mask="99-99-9999 99:99" [(ngModel)]="val" slotChar="mm-dd-yyyy hh:mm"
+        <p-inputMask styleClass="form-control" mask="9999-99-99 99:99" [(ngModel)]="dateTime" slotChar="yyyy-mm-dd hh:mm"
                      (onComplete)="buttonUnblock()"></p-inputMask>
       </div>
     </div>
     <button class="btn btn-info pull-right" [disabled]="!buttonBlocked" (click)="book()">Book!</button>
   </div>
 </div>
-<div *ngIf="booking">
-  {{booking | json}}
+<div *ngIf="booking" class="alert alert-success pull-right">
+  <strong>Success!</strong> you have booked a place in {{booking.restaurantName | nameTransform}} on {{booking.date | date}}, {{booking.time.substr(0,5)}}
+</div>
+<div *ngIf="error" class="alert alert-danger pull-right">
+  <strong>Error!</strong> {{error}}
 </div>

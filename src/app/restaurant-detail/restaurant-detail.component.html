@@ -8,7 +8,7 @@
         5)}}</p>
     </div>
   </div>
-  <booking-creator *ngIf="loggedUser"></booking-creator>
+  <booking-creator *ngIf="loggedUser" [restaurantName]="restaurant.name"></booking-creator>
   <restaurant-menu [menu]="restaurant.menu"></restaurant-menu>
 </div>
 
