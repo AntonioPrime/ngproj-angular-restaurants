@@ -39,6 +39,11 @@ const routes: Routes = [
     component: LoginFormComponent
   },
   {
+    path: 'app/admin',
+    loadChildren: 'app/admin/admin.module#AdminModule',
+    canLoad: [AuthGuard]
+  },
+  {
     path: '',
     redirectTo: '/app/restaurants',
     pathMatch: 'full'
