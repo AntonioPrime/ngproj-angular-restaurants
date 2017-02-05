@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 import {BookingService} from "../service/booking.service";
 import {Booking} from "../model/booking";
 import {Restaurant} from "../model/restaurant";
@@ -7,7 +7,12 @@ import {Restaurant} from "../model/restaurant";
   templateUrl: 'app/booking/booking-creator.component.html',
   selector: 'booking-creator'
 })
-export class BookingCreatorComponent {
+export class BookingCreatorComponent implements OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.error = null;
+    this.booking = null;
+  }
+
   booking: Booking;
   dateTime: Date;
   minDate: Date = new Date();
@@ -30,15 +35,9 @@ export class BookingCreatorComponent {
       .subscribe(booking => {
         this.error = null;
         this.booking = booking;
-        setTimeout(() => {
-          this.booking = null
-        }, 3000);
       }, err => {
         this.booking = null;
         this.error = err;
-        setTimeout(() => {
-          this.error = null
-        }, 3000);
       });
   }
 
