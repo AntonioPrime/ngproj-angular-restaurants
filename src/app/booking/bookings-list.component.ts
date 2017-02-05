@@ -17,4 +17,10 @@ export class BookingsListComponent implements OnInit{
   constructor(private bookingService: BookingService) {
   }
 
+  deleteOne(date: string){
+    this.bookingService.deleteByDate(date);
+    this.bookings = this.bookings.filter(function (booking) {
+      return date !== booking.date;
+    });
+  }
 }

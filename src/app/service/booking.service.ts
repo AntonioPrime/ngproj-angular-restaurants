@@ -36,4 +36,8 @@ export class BookingService {
     return this.http.get(this.bookingsUrl, this.authService.getStorageOptions()).map(res => res.json())
       .catch(ex => ex.json().details[0]);
   }
+
+  deleteByDate(date: string) {
+    this.http.delete(this.bookingsUrl + '?date=' + date, this.authService.getStorageOptions()).subscribe(() => {});
+  }
 }
