@@ -3,14 +3,26 @@ import {AdminRoutingModule} from "./admin-routing.module";
 import {AdminRestaurantsComponent} from "./restaurants/admin-restaurants.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {AdminComponent} from "./admin.component";
+import {AdminRestaurantsService} from "./service/admin-restaurants.service";
+import {HttpModule} from "@angular/http";
+import {PipeModule} from "../pipe/pipe.module";
 
 @NgModule({
   imports: [
     AdminRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    PipeModule
   ],
-  declarations: [AdminRestaurantsComponent]
+  declarations: [
+    AdminRestaurantsComponent,
+    AdminComponent
+  ],
+  providers: [
+    AdminRestaurantsService
+  ]
 })
 export class AdminModule {
 

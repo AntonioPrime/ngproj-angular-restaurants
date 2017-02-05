@@ -14,13 +14,13 @@ import {NavBarComponent} from "./navbar/navbar.component";
 import {CredentialsStorageService} from "./service/credentials-storage.service";
 import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
-import {RestaurantNamePipe} from "./pipe/restaurant-name.pipe";
 import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
 import {BookingCreatorComponent} from "./booking/booking-creator.component";
 import {BookingService} from "./service/booking.service";
 import {MenuComponent} from "./menu/menu.component";
 import {BookingsListComponent} from "./booking/bookings-list.component";
 import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "primeng/primeng";
+import {PipeModule} from "./pipe/pipe.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "pr
     ProfileComponent,
     NavBarComponent,
     LoginFormComponent,
-    RestaurantNamePipe,
     BookingCreatorComponent,
     BookingsListComponent
   ],
@@ -43,7 +42,8 @@ import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "pr
     CalendarModule,
     DataScrollerModule,
     DialogModule,
-    SharedModule
+    SharedModule,
+    PipeModule
   ],
   providers: [
     RestaurantsService,
