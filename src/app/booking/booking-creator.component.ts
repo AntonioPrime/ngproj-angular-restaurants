@@ -27,18 +27,22 @@ export class BookingCreatorComponent implements OnChanges {
   }
 
   book() {
-    this.display = false;
-    let date = this.dateTime.toISOString().substr(0, 10);
-    let time = this.dateTime.toTimeString().substr(0, 5);
-    this.dateTime = null;
-    this.bookingService.book(new Booking(date, time, this.restaurant.name))
-      .subscribe(booking => {
-        this.error = null;
-        this.booking = booking;
-      }, err => {
-        this.booking = null;
-        this.error = err;
-      });
+    if (this.dateTime != null) {
+      this.display = false;
+      let date = this.dateTime.toISOString().substr(0, 10);
+      let time = this.dateTime.toTimeString().substr(0, 5);
+      this.dateTime = null;
+      this.bookingService.book(new Booking(date, time, this.restaurant.name))
+        .subscribe(booking => {
+          this.error = null;
+          this.booking = booking;
+        }, err => {
+          this.booking = null;
+          this.error = err;
+        });
+    } else {
+      this.error = 'Date is not correct.'
+    }
   }
 
   showDialog() {
