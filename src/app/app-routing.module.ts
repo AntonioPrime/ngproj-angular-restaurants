@@ -5,6 +5,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
 import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
+import {BookingsListComponent} from "./booking/bookings-list.component";
 
 const routes: Routes = [
   {
@@ -20,10 +21,21 @@ const routes: Routes = [
   {
     path: 'app/profile',
     canActivate: [AuthGuard],
-    component: ProfileComponent
+    component: ProfileComponent,
+    children: [
+      {
+        path: 'bookings',
+        component: BookingsListComponent,
+        canActivate: [AuthGuard],
+      }
+    ]
   },
   {
     path: 'app/login',
+    component: LoginFormComponent
+  },
+  {
+    path: 'app/login/',
     component: LoginFormComponent
   },
   {
@@ -36,4 +48,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

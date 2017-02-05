@@ -9,6 +9,7 @@ import {User} from "../model/user";
 })
 export class ProfileComponent implements OnInit {
   loggedUser: User;
+  display: boolean = false;
 
   constructor(private authService: AuthService) {
   }
@@ -17,10 +18,12 @@ export class ProfileComponent implements OnInit {
     this.authService.getProfile().subscribe(user => this.loggedUser = user);
   }
 
+  showDialog() {
+    this.display = true;
+  }
+
   deleteSelf(): void {
-    let result = confirm("Do you want to delete your profile ?");
-    if (result) {
-      this.authService.deleteProfile();
-    }
+    this.display = false;
+    this.authService.deleteProfile();
   }
 }

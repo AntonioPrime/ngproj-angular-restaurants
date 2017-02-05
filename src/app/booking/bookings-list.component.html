@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-7 pull-right">
+  <div class="jumbotron" style="background-color: rgba(60,50,155,0.1)">
+    <div class="page-header">
+      <p style="text-align: center; font-size: 300%">My Bookings</p>
+    </div>
+  </div>
+  <div *ngFor="let booking of bookings">
+    <div>
+      <div class="panel panel-primary" style="border-color: rgba(49,176,213,0.7)">
+        <div class="panel-heading" style="background-color: rgba(49,176,213,0.7)">
+          {{booking.date | date}}
+          <button style="float: right" class=" ui-button-danger" (click)="deleteOne(booking.date)" pButton
+                  icon="fa-times"></button>
+        </div>
+        <div class="panel-body">
+          <div class="row" style="font-size: 200%">
+            <div class="col-sm-3"><i class="fa fa-clock-o"></i> {{booking.time.substr(0, 5)}}</div>
+            <div class="col-sm-9" style="text-align: center">{{booking.restaurantName | nameTransform}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,26 @@
 <div class="row">
   <div class="col-md-6 pull-right">
+    <div class="pull-left">
+      <div class="form-group">
+        <p-calendar [(ngModel)]="dateTime" [minDate]="minDate" [maxDate]="maxDate" inputStyleClass="form-control" (onSelect)="buttonBlocked=true" dateFormat="yy-mm-dd" showTime="showTime" hourFormat="24"></p-calendar>
+      </div>
+    </div>
+    <button class="btn btn-info pull-right" [disabled]="!buttonBlocked" (click)="showDialog()">Book!</button>
+    <p-dialog header="Warning" [(visible)]="display" modal="modal" width="300" responsive="true">
+      <p>Booking confirmation.</p>
+      <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+          <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+          <button type="button" class="ui-button-info" pButton icon="fa-check" (click)="book()"
+                  label="Yes"></button>
+        </div>
+      </p-footer>
+    </p-dialog>
   </div>
 </div>
-<div class="row">
-  <div class="form-group pull-right" style="padding-right: 5%">
-    <input placeholder="Booking time" class="form-control"/>
-  </div>
-  <div>
-    <button class="btn btn-info pull-right" (click)="book()">Book!</button>
-  </div>
+<div *ngIf="booking" class="alert alert-success pull-right">
+  <strong>Success!</strong> you have booked a place in {{booking.restaurantName | nameTransform}} on {{booking.date | date}}, {{booking.time.substr(0,5)}}
 </div>
-<div *ngIf="booking">
-  {{booking | json}}
+<div *ngIf="error" class="alert alert-danger pull-right">
+  <strong>Error!</strong> {{error}}
 </div>

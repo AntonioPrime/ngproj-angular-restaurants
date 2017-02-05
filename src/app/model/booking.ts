@@ -3,4 +3,10 @@ export class Booking {
   date: string;
   time: string;
   restaurantName: string;
+
+  constructor(date: string, time: string, restaurantName: string) {
+    this.date = date;
+    this.time = time;
+    this.restaurantName = restaurantName;
+  }
 }
