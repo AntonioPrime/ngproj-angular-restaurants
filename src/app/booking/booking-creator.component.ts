@@ -30,9 +30,15 @@ export class BookingCreatorComponent {
       .subscribe(booking => {
         this.error = null;
         this.booking = booking;
+        setTimeout(() => {
+          this.booking = null
+        }, 3000);
       }, err => {
         this.booking = null;
         this.error = err;
+        setTimeout(() => {
+          this.error = null
+        }, 3000);
       });
   }
 
