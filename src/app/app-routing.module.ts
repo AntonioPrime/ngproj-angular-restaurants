@@ -35,6 +35,10 @@ const routes: Routes = [
     component: LoginFormComponent
   },
   {
+    path: 'app/login/',
+    component: LoginFormComponent
+  },
+  {
     path: '',
     redirectTo: '/app/restaurants',
     pathMatch: 'full'
