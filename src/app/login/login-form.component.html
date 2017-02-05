@@ -32,19 +32,20 @@
 <div class="container">
   <div class="login-page">
     <div class="form">
-      <form *ngIf="isRegister" class="register-form">
+      <form class="register-form" [@test]="registerShow">
         <input type="text" placeholder="name" id="name" required [(ngModel)]="credentials.name" name="name"/>
         <input type="password" placeholder="password" required [(ngModel)]="credentials.password" name="password"/>
         <input type="text" placeholder="email address" required [(ngModel)]="credentials.email" name="email"/>
         <button (click)="login()">create</button>
-        <p class="message">Already registered? <a routerLink="/app/login" routerLinkActive="active">Sign In</a></p>
+        <!--<p class="message">Already registered? <a routerLink="/app/login" routerLinkActive="active">Sign In</a></p>-->
+        <p class="message">Already registered? <a (click)="toggleState()">Sign In</a></p>
       </form>
-      <form *ngIf="!isRegister" class="login-form">
+      <form class="login-form" [@test]="loginShow">
         <input type="text" placeholder="username" required [(ngModel)]="credentials.email" name="email"/>
         <input type="password" placeholder="password" required [(ngModel)]="credentials.password" name="password"/>
         <button (click)="login()">login</button>
-        <p class="message">Not registered? <a [routerLink]="['/app/login']" [queryParams]="{register: true}"
-                                              routerLinkActive="active">Create an account</a></p>
+        <!--<p class="message">Not registered? <a [routerLink]="['/app/login/']" [queryParams]="{register: true}" routerLinkActive="active">Create an account</a></p>-->
+        <p class="message">Not registered? <a (click)="toggleState()">Create an account</a></p>
       </form>
       <div *ngIf="error" class="alert alert-danger">
         <strong>Error!</strong> {{error}}
