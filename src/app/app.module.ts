@@ -21,6 +21,7 @@ import {MenuComponent} from "./menu/menu.component";
 import {BookingsListComponent} from "./booking/bookings-list.component";
 import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "primeng/primeng";
 import {PipeModule} from "./pipe/pipe.module";
+import {AdminAuthGuard} from "./service/admin-auth-guard";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {PipeModule} from "./pipe/pipe.module";
     CredentialsStorageService,
     AuthService,
     BookingService,
-    AuthGuard
+    AuthGuard,
+    AdminAuthGuard
   ],
   bootstrap: [
     AppComponent

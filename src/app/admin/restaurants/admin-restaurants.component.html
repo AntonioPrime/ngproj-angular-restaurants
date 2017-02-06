@@ -1,3 +1,7 @@
-<div>
-  {{s | nameTransform}}
+<div class="col-md-3">
+  <a *ngFor="let restaurant of restaurants" [routerLink]="['/app/admin/restaurants', restaurant.name]" style="padding: 5px">
+    <div class="module hero">
+      <h4>{{restaurant.name | nameTransform}}</h4>
+    </div>
+  </a>
 </div>

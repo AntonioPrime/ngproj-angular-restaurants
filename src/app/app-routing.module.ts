@@ -6,6 +6,7 @@ import {LoginFormComponent} from "./login/login-form.component";
 import {AuthGuard} from "./service/auth-guard.service";
 import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.component";
 import {BookingsListComponent} from "./booking/bookings-list.component";
+import {AdminAuthGuard} from "./service/admin-auth-guard";
 
 const routes: Routes = [
   {
@@ -41,7 +42,7 @@ const routes: Routes = [
   {
     path: 'app/admin',
     loadChildren: 'app/admin/admin.module#AdminModule',
-    canLoad: [AuthGuard]
+    canLoad: [AdminAuthGuard]
   },
   {
     path: '',

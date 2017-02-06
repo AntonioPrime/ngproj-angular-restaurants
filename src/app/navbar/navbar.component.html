@@ -20,7 +20,7 @@
       </template>
       <template ngSwitchDefault>
         <li *ngIf="loggedUser.roles.indexOf('ROLE_ADMIN') != -1">
-          <a routerLink="/app/admin" routerLinkActive="active">
+          <a routerLink="/app/admin/restaurants" routerLinkActive="active">
             <span class="glyphicon glyphicon-cutlery"></span> Admin</a>
         </li>
         <li>

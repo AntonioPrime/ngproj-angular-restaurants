@@ -7,6 +7,7 @@ import {AdminComponent} from "./admin.component";
 import {AdminRestaurantsService} from "./service/admin-restaurants.service";
 import {HttpModule} from "@angular/http";
 import {PipeModule} from "../pipe/pipe.module";
+import {AdminRestaurantDetailComponent} from "./admin-restaurant-detail/admin-restaurant-detail.component";
 
 @NgModule({
   imports: [
@@ -17,8 +18,9 @@ import {PipeModule} from "../pipe/pipe.module";
     PipeModule
   ],
   declarations: [
+    AdminComponent,
     AdminRestaurantsComponent,
-    AdminComponent
+    AdminRestaurantDetailComponent
   ],
   providers: [
     AdminRestaurantsService
