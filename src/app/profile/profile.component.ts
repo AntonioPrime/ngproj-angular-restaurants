@@ -5,7 +5,7 @@ import {User} from "../model/user";
 
 @Component({
   selector: 'login',
-  templateUrl: 'app/profile/profile.component.html'
+  templateUrl: 'profile.component.html'
 })
 export class ProfileComponent implements OnInit {
   loggedUser: User;

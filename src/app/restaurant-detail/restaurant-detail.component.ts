@@ -6,7 +6,7 @@ import {User} from "../model/user";
 import {AuthService} from "../service/auth.service";
 
 @Component({
-  templateUrl: 'app/restaurant-detail/restaurant-detail.component.html'
+  templateUrl: 'restaurant-detail.component.html'
 })
 export class RestaurantDetailComponent implements OnInit{
   restaurant: Restaurant;

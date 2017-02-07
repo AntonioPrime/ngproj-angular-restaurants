@@ -8,6 +8,9 @@ import {AdminRestaurantsService} from "./service/admin-restaurants.service";
 import {HttpModule} from "@angular/http";
 import {PipeModule} from "../pipe/pipe.module";
 import {AdminRestaurantDetailComponent} from "./admin-restaurant-detail/admin-restaurant-detail.component";
+import {SharedModule, DialogModule} from "primeng/primeng";
+import {CalendarModule} from "primeng/components/calendar/calendar";
+import {InputMaskModule} from "primeng/components/inputmask/inputmask";
 
 @NgModule({
   imports: [
@@ -15,7 +18,11 @@ import {AdminRestaurantDetailComponent} from "./admin-restaurant-detail/admin-re
     CommonModule,
     FormsModule,
     HttpModule,
-    PipeModule
+    PipeModule,
+    DialogModule,
+    SharedModule,
+    CalendarModule,
+    InputMaskModule
   ],
   declarations: [
     AdminComponent,
@@ -27,5 +34,4 @@ import {AdminRestaurantDetailComponent} from "./admin-restaurant-detail/admin-re
   ]
 })
 export class AdminModule {
-
 }

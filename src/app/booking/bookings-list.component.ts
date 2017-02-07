@@ -4,7 +4,7 @@ import {Booking} from "../model/booking";
 
 @Component({
   selector: 'bookings-list',
-  templateUrl: 'app/booking/bookings-list.component.html'
+  templateUrl: 'bookings-list.component.html'
 })
 export class BookingsListComponent implements OnInit{
   bookings: Booking[];

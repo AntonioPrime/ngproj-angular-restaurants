@@ -4,7 +4,7 @@ import {Booking} from "../model/booking";
 import {Restaurant} from "../model/restaurant";
 
 @Component({
-  templateUrl: 'app/booking/booking-creator.component.html',
+  templateUrl: 'booking-creator.component.html',
   selector: 'booking-creator'
 })
 export class BookingCreatorComponent implements OnChanges {

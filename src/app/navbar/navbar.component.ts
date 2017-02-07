@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'main-navbar',
-  templateUrl: 'app/navbar/navbar.component.html'
+  templateUrl: 'navbar.component.html'
 })
 export class NavBarComponent implements OnInit{
   loggedUser: User;

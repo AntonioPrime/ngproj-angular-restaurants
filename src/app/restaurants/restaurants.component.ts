@@ -6,7 +6,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'my-restaurants',
-  templateUrl: 'app/restaurants/restaurants.component.html'
+  templateUrl: 'restaurants.component.html'
 })
 export class RestaurantsComponent implements OnInit {
   restaurantsCached: Restaurant[];

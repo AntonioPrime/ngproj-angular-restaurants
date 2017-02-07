@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 @Component({
-  templateUrl: 'app/admin/admin.component.html'
+  templateUrl: 'admin.component.html'
 })
 export class AdminComponent {
 

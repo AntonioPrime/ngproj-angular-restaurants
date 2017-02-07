@@ -1,7 +1,45 @@
 <div class="col-md-3">
-  <a *ngFor="let restaurant of restaurants" [routerLink]="['/app/admin/restaurants', restaurant.name]" style="padding: 5px">
+  <a *ngFor="let res of restaurants" [routerLink]="['/app/admin/restaurants', res.name]"
+     style="padding: 5px">
     <div class="module hero">
-      <h4>{{restaurant.name | nameTransform}}</h4>
+      <h4>{{res.name | nameTransform}}</h4>
     </div>
   </a>
+  <a style="padding: 5px" data-toggle="modal" data-keyboard="true" data-target="#myModal" (click)="showDialog()">
+    <div class="module hero">
+      <h4><i class="glyphicon glyphicon-plus"></i></h4>
+    </div>
+  </a>
+</div>
+
+<div id="myModal" tabindex='-1' class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Restaurant</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="name">Restaurant name:</label>
+          <input type="email" class="form-control" id="name" required [(ngModel)]="restaurant.name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="openTime">Opening time</label>
+          <p-inputMask mask="99:99" id="openTime" styleClass="form-control" [(ngModel)]="restaurant.openTime" placeholder="00:00"></p-inputMask>
+        </div>
+        <div class="form-group">
+          <label for="closeTime">Closing time</label>
+          <p-inputMask mask="99:99" id="closeTime" styleClass="form-control" [(ngModel)]="restaurant.closeTime" placeholder="00:00"></p-inputMask>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createNew()">Save changes</button>
+      </div>
+    </div>
+
+  </div>
 </div>

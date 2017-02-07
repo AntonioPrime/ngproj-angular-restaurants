@@ -5,8 +5,8 @@ import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'login-form',
-  templateUrl: 'app/login/login-form.component.html',
-  styleUrls: ['app/login/login-form.component.css'],
+  templateUrl: 'login-form.component.html',
+  styleUrls: ['login-form.component.css'],
   animations: [
     trigger('test', [
       state('show', style({

@@ -4,7 +4,7 @@ import {Restaurant} from "../../model/restaurant";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
-  templateUrl: 'app/admin/admin-restaurant-detail/admin-restaurant-detail.component.html'
+  templateUrl: 'admin-restaurant-detail.component.html'
 })
 export class AdminRestaurantDetailComponent implements OnInit{
   restaurant: Restaurant;
