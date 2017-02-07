@@ -1,7 +1,7 @@
 import './rxjs-extensions.ts';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
@@ -22,6 +22,7 @@ import {BookingsListComponent} from "./booking/bookings-list.component";
 import {CalendarModule, DataScrollerModule, SharedModule, DialogModule} from "primeng/primeng";
 import {PipeModule} from "./pipe/pipe.module";
 import {AdminAuthGuard} from "./service/admin-auth-guard";
+import { AgmCoreModule } from "angular2-google-maps/core";
 
 @NgModule({
   declarations: [
@@ -33,11 +34,16 @@ import {AdminAuthGuard} from "./service/admin-auth-guard";
     NavBarComponent,
     LoginFormComponent,
     BookingCreatorComponent,
-    BookingsListComponent
+    BookingsListComponent,
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyATDouzWDljZnU_VtWkSS5KUqaf7QkZjPE",
+      libraries: ["places"]
+    }),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     CalendarModule,

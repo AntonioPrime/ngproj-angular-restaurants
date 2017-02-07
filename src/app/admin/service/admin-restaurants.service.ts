@@ -22,4 +22,16 @@ export class AdminRestaurantsService {
   get(param: any): Observable<Restaurant> {
     return this.restaurantService.get(param);
   }
+
+  save(restaurant: Restaurant) {
+    return this.http.post(this.adminRestaurantsUrl, JSON.stringify(restaurant), this.authService.getStorageOptions())
+      .map(res => res.json())
+      .catch(ex => {
+        let s: string = ex.json().details[0];
+        if (s.match("duplicate key error")) {
+          return Observable.throw('This restaurant name already exists');
+        }
+        return Observable.throw(s);
+      });
+  }
 }

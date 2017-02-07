@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {AdminRestaurantsComponent} from "./restaurants/admin-restaurants.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {AdminComponent} from "./admin.component";
 import {AdminRestaurantsService} from "./service/admin-restaurants.service";
@@ -17,6 +17,7 @@ import {InputMaskModule} from "primeng/components/inputmask/inputmask";
     AdminRoutingModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     PipeModule,
     DialogModule,

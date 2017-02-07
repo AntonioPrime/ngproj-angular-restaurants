@@ -5,7 +5,7 @@
       <h4>{{res.name | nameTransform}}</h4>
     </div>
   </a>
-  <a style="padding: 5px" data-toggle="modal" data-keyboard="true" data-target="#myModal" (click)="showDialog()">
+  <a style="padding: 5px" data-toggle="modal" data-keyboard="true" data-target="#myModal" >
     <div class="module hero">
       <h4><i class="glyphicon glyphicon-plus"></i></h4>
     </div>
@@ -34,12 +34,18 @@
           <label for="closeTime">Closing time</label>
           <p-inputMask mask="99:99" id="closeTime" styleClass="form-control" [(ngModel)]="restaurant.closeTime" placeholder="00:00"></p-inputMask>
         </div>
+        <label for="loc">Location</label>
+        <div class="form-group">
+          <input id="loc" placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+        </div>
+        <div *ngIf="warning" class="alert alert-danger">
+          <strong>Error!</strong> {{warning}}
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createNew()">Save changes</button>
+        <button id="closeButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="createNew()">Save changes</button>
       </div>
     </div>
-
   </div>
 </div>

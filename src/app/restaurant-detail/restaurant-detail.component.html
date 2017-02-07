@@ -10,5 +10,8 @@
   </div>
   <booking-creator *ngIf="loggedUser" [restaurant]="restaurant"></booking-creator>
   <restaurant-menu [menu]="restaurant.menu"></restaurant-menu>
+  <sebm-google-map [latitude]="restaurant.location.y" [longitude]="restaurant.location.x">
+    <sebm-google-map-marker [latitude]="restaurant.location.y" [longitude]="restaurant.location.x"></sebm-google-map-marker>
+  </sebm-google-map>
 </div>
 

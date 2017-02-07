@@ -11,3 +11,9 @@
   font-size: 25px;
   vertical-align: middle;
 }
+.pac-container {
+  z-index: 2147483647 !important;
+  position: fixed;
+  display: inline-block;
+  float: left;
+}

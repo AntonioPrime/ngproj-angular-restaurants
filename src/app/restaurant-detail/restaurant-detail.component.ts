@@ -6,7 +6,8 @@ import {User} from "../model/user";
 import {AuthService} from "../service/auth.service";
 
 @Component({
-  templateUrl: 'restaurant-detail.component.html'
+  templateUrl: 'restaurant-detail.component.html',
+  styleUrls: ['restaurant-detail.component.css']
 })
 export class RestaurantDetailComponent implements OnInit{
   restaurant: Restaurant;
